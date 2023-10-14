@@ -1,9 +1,8 @@
 from typing import Optional
 
-from sqlmodel import Field, Relationship
+from sqlmodel import Field
 
 from app.model.base_model import BaseModel
-from app.model.user import User
 
 
 class Character(BaseModel, table=True):
@@ -17,4 +16,3 @@ class Character(BaseModel, table=True):
     eye_color: str = Field(nullable=False)
 
     user_id: Optional[int] = Field(default=None, foreign_key="users.id")
-    user: Optional[User] = Relationship(back_populates="characters")

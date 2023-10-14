@@ -17,5 +17,5 @@ class User(ModelBaseInfo, BaseUser):
     ...
 
 
-class UpsertUser(BaseUser):
+class UpdateUser(BaseUser):
     ...

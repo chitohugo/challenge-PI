@@ -14,11 +14,5 @@ class BaseService:
     def patch(self, id: int, schema):
         return self._repository.update(id, schema)
 
-    def patch_attr(self, id: int, attr: str, value):
-        return self._repository.update_attr(id, attr, value)
-
-    def put_update(self, id: int, schema):
-        return self._repository.whole_update(id, schema)
-
     def remove_by_id(self, id):
         return self._repository.delete_by_id(id)

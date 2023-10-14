@@ -6,7 +6,8 @@ from app.core.container import Container
 from app.core.dependencies import get_current_user
 from app.core.security import JWTBearer
 from app.schema.base_schema import Blank
-from app.schema.user_schema import UpsertUser, User
+from app.schema.character_schema import UpdateCharacter
+from app.schema.user_schema import User
 from app.services.user_service import UserService
 
 router = APIRouter(
@@ -38,9 +39,9 @@ async def get_user(
 
 @router.patch("/{id}", response_model=User, dependencies=[Depends(get_current_user)])
 @inject
-async def update_lead(
+async def update_user(
         id: int,
-        user: UpsertUser,
+        user: UpdateCharacter,
         service: UserService = Depends(Provide[Container.user_service])
 ):
     return service.patch(id, user)
@@ -48,7 +49,7 @@ async def update_lead(
 
 @router.delete("/{id}", response_model=Blank, dependencies=[Depends(get_current_user)])
 @inject
-async def delete_lead(
+async def delete_user(
         id: int,
         service: UserService = Depends(Provide[Container.user_service])
 ):
