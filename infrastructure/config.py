@@ -15,7 +15,7 @@ class Configs(BaseSettings):
     # BASE
     ENV: str = os.getenv("ENV", "dev")
     API: str = "/api"
-    API_V1_STR: str = "/api/v1"
+    PREFIX: str = "/api/v1"
     PROJECT_NAME: str = "Challenge-Pi"
 
     # DATE

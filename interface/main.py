@@ -3,8 +3,8 @@ from starlette.middleware.cors import CORSMiddleware
 from fastapi_pagination import add_pagination
 
 from app.api.routes import routers as v1_routers
-from app.core.config import configs
-from app.core.container import Container
+from infrastructure.config import configs
+from infrastructure.container import Container
 
 
 class AppCreator:
@@ -36,9 +36,9 @@ class AppCreator:
         # set routes
         @self.app.get("/")
         def root():
-            return "service is working"
+            return "Service is working"
 
-        self.app.include_router(v1_routers, prefix=configs.API_V1_STR)
+        self.app.include_router(v1_routers, prefix=configs.PREFIX)
         add_pagination(self.app)
 
     def __new__(cls):
