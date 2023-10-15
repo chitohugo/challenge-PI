@@ -1,4 +1,4 @@
-from app.repository.character_repository import CharacterRepository
+from data.repository.character_repository import CharacterRepository
 from app.services.base_service import BaseService
 
 

@@ -1,9 +1,9 @@
 from dependency_injector import containers, providers
 
-from app.core.config import configs
-from app.core.database import Database
-from app.repository.character_repository import CharacterRepository
-from app.repository.user_repository import UserRepository
+from infrastructure.config import configs
+from data.database import Database
+from data.repository.character_repository import CharacterRepository
+from data.repository.user_repository import UserRepository
 from app.services.auth_service import AuthService
 from app.services.character_service import CharacterService
 from app.services.user_service import UserService
@@ -12,9 +12,9 @@ from app.services.user_service import UserService
 class Container(containers.DeclarativeContainer):
     wiring_config = containers.WiringConfiguration(
         modules=[
-            "app.api.endpoints.auth",
-            "app.api.endpoints.user",
-            "app.api.endpoints.character",
+            "interface.endpoints.auth",
+            "interface.endpoints.user",
+            "interface.endpoints.character",
             "app.core.dependencies",
         ]
     )

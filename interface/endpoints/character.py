@@ -1,13 +1,13 @@
 from dependency_injector.wiring import Provide, inject
 from fastapi import APIRouter, Depends
 
-from app.core.config import configs
-from app.core.container import Container
+from infrastructure.config import configs
+from infrastructure.container import Container
 from app.core.dependencies import get_current_user
 from app.core.security import JWTBearer
-from app.model import User
-from app.schema.base_schema import Blank
-from app.schema.character_schema import Character, UpdateCharacter, PostCharacter
+from data.models import User
+from interface.schema.base_schema import Blank
+from interface.schema.character_schema import Character, UpdateCharacter, PostCharacter
 from app.services.character_service import CharacterService
 
 router = APIRouter(
@@ -39,7 +39,7 @@ async def get_character(
 
 @router.post("", response_model=Character)
 @inject
-async def create_post(
+async def create_character(
         payload: PostCharacter,
         service: CharacterService = Depends(Provide[Container.character_service]),
         current_user: User = Depends(get_current_user)

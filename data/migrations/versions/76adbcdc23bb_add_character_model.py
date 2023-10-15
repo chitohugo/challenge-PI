@@ -1,4 +1,4 @@
-"""add character model
+"""add character models
 
 Revision ID: 76adbcdc23bb
 Revises: 22a131782a14

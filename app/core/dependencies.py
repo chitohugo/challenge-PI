@@ -3,12 +3,12 @@ from fastapi import Depends
 from jose import jwt
 from pydantic import ValidationError
 
-from app.core.config import configs
-from app.core.container import Container
+from infrastructure.config import configs
+from infrastructure.container import Container
 from app.core.exceptions import AuthError
 from app.core.security import ALGORITHM, JWTBearer
-from app.model.user import User
-from app.schema.auth_schema import Payload
+from data.models import User
+from interface.schema.auth_schema import Payload
 from app.services.user_service import UserService
 
 

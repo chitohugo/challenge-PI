@@ -1,4 +1,4 @@
-"""add user model
+"""add user models
 
 Revision ID: 22a131782a14
 Revises: 
