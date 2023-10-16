@@ -1,13 +1,11 @@
 version: "3.8"
 services:
-  character-api:
-    build:
-      context: ./
-      dockerfile: infrastructure/Dockerfile
-    container_name: character-api
-    command: bash -c "uvicorn interface.main:app --host 0.0.0.0 --port 8000 --reload"
+  app:
+    build: .
+    container_name: fastapi
+    command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
     volumes:
-      - .:/backend
+      - .:/app
     ports:
       - "8000:8000"
     env_file:
