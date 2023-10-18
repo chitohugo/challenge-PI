@@ -10,7 +10,7 @@
 1. Create a file called `.env` with environment variables in the root of the project.
 2. Build with `docker compose build`.
 3. Run with `docker compose up`.
-4. In another terminal run the migrations `docker compose exec api-character alembic upgrade head`.
+4. In another terminal run the migrations `docker compose exec character alembic upgrade head`.
 5. Run test with `docker compose exec character pytest -vv`. 40% coverage!.
 
 #### How to use: 
