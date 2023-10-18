@@ -6,6 +6,7 @@ from interface.schema.base_schema import ModelBaseInfo
 
 
 class BaseCharacter(BaseModel):
+    id: int
     name: str
     height: float
     mass: float

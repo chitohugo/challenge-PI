@@ -145,7 +145,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Ben 10\",\n  \"height\": 12.3,\n  \"mass\": 20.1,\n  \"hair_color\": \"Green\",\n  \"skin_color\": \"Blue\",\n  \"eye_color\": \"Black\"\n}",
+							"raw": "{\n  \"id\": 1,  \n  \"name\": \"Gohan\",\n  \"height\": 12.3,\n  \"mass\": 20.1,\n  \"hair_color\": \"Yellow\",\n  \"skin_color\": \"Black\",\n  \"eye_color\": \"White\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
