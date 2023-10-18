@@ -17,6 +17,13 @@ class Configs(BaseSettings):
     API: str = "/api"
     PREFIX: str = "/api/v1"
     PROJECT_NAME: str = "Challenge-Pi"
+    ENV_DATABASE: dict = {
+        "dev": "challenge",
+        "test": "challenge-test",
+    }
+    ENGINES: dict = {
+        "sqlite": "sqlite:///"
+    }
 
     # DATE
     DATETIME_FORMAT: str = "%Y-%m-%dT%H:%M:%S"
@@ -32,9 +39,11 @@ class Configs(BaseSettings):
     BACKEND_CORS_ORIGINS: List[str] = ["*"]
 
     # DATABASE
-    DATABASE_NAME: str = os.getenv("DATABASE_NAME", "challenge")
-    DATABASE_URI = f"sqlite:///{DATABASE_NAME}.db"
+    DATABASE_NAME = ENV_DATABASE[ENV]
+    ENGINE = ENGINES.get(os.getenv("ENGINE"))
+    DATABASE_URI = f"{ENGINE}{DATABASE_NAME}.db"
 
+    # PAGINATION
     Page = Page.with_custom_options(
         size=Query(30, ge=1, le=50),
     )
