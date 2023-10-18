@@ -1,5 +1,6 @@
 def test_create_character(client, token):
     payload = {
+        "id": 2,
         "name": "Cleaning Item",
         "height": 18.2,
         "mass": 10.2,
