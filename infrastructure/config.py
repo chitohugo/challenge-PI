@@ -2,9 +2,9 @@ import os
 from typing import List
 
 from dotenv import load_dotenv
-from pydantic import BaseSettings
 from fastapi import Query
 from fastapi_pagination import Page
+from pydantic import BaseSettings
 
 load_dotenv()
 

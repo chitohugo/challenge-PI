@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from starlette.middleware.cors import CORSMiddleware
 from fastapi_pagination import add_pagination
+from starlette.middleware.cors import CORSMiddleware
 
 from app.api.routes import routers as v1_routers
 from infrastructure.config import configs

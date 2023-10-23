@@ -1,14 +1,14 @@
 from dependency_injector.wiring import Provide, inject
 from fastapi import APIRouter, Depends
 
-from infrastructure.config import configs
-from infrastructure.container import Container
 from app.core.dependencies import get_current_user
 from app.core.security import JWTBearer
+from app.services.character_service import CharacterService
 from data.models import User
+from infrastructure.config import configs
+from infrastructure.container import Container
 from interface.schema.base_schema import Blank
 from interface.schema.character_schema import Character, UpdateCharacter, PostCharacter
-from app.services.character_service import CharacterService
 
 router = APIRouter(
     prefix="/character",

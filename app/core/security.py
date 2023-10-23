@@ -5,8 +5,8 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import jwt
 from passlib.context import CryptContext
 
-from infrastructure.config import configs
 from app.core.exceptions import AuthError
+from infrastructure.config import configs
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 ALGORITHM = "HS256"

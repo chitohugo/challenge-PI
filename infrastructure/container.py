@@ -1,12 +1,12 @@
 from dependency_injector import containers, providers
 
-from infrastructure.config import configs
-from data.database import Database
-from data.repository.character_repository import CharacterRepository
-from data.repository.user_repository import UserRepository
 from app.services.auth_service import AuthService
 from app.services.character_service import CharacterService
 from app.services.user_service import UserService
+from data.database import Database
+from data.repository.character_repository import CharacterRepository
+from data.repository.user_repository import UserRepository
+from infrastructure.config import configs
 
 
 class Container(containers.DeclarativeContainer):
