@@ -1,0 +1,29 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
+        args: ['--config', '.flake8']
+        language: python
+        types: [python]
+        stages: [commit]
+
+-   repo: https://github.com/psf/black
+    rev: 23.10.1
+    hooks:
+    -   id: black
+        args: ['--config', 'black-config.toml']
+        stages: [commit]
+
+-   repo: local
+    hooks:
+    -   id: pytest
+        name: pytest
+        language: python
+        types: [python]
+        entry: bash -c 'docker compose exec -T character pytest -vv'
+        pass_filenames: false
+        always_run: true
+        stages: [commit]
