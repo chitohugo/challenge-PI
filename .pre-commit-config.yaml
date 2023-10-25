@@ -23,7 +23,7 @@ repos:
         name: pytest
         language: python
         types: [python]
-        entry: bash -c 'docker compose exec -T character pytest -vv'
+        entry: docker compose exec -T character pytest -vv
         pass_filenames: false
         always_run: true
         stages: [commit]
