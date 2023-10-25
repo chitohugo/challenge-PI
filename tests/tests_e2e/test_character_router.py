@@ -6,12 +6,10 @@ def test_create_character(client, token):
         "mass": 10.2,
         "hair_color": "Uranian blue",
         "skin_color": "Blue",
-        "eye_color": "White"
+        "eye_color": "White",
     }
 
-    headers = {
-        "Authorization": f"Bearer {token}"
-    }
+    headers = {"Authorization": f"Bearer {token}"}
     response = client.post(
         "/api/v1/character/",
         headers=headers,
@@ -25,13 +23,8 @@ def test_create_character(client, token):
 
 
 def test_get_all_characters(client, token):
-    headers = {
-        "Authorization": f"Bearer {token}"
-    }
-    response = client.get(
-        "/api/v1/character/",
-        headers=headers
-    )
+    headers = {"Authorization": f"Bearer {token}"}
+    response = client.get("/api/v1/character/", headers=headers)
     assert response.status_code == 200
     response = response.json()
     assert len(response["items"]) == 1
