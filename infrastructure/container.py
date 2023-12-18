@@ -1,11 +1,9 @@
 from dependency_injector import containers, providers
 
-from app.services.auth_service import AuthService
-from app.services.character_service import CharacterService
-from app.services.user_service import UserService
+
+from app.services import *
 from data.database import Database
-from data.repository.character_repository import CharacterRepository
-from data.repository.user_repository import UserRepository
+from data.repository import *
 from infrastructure.config import configs
 
 

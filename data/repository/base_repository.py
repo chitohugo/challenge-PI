@@ -5,7 +5,7 @@ from fastapi_pagination.ext.sqlalchemy import paginate
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from app.core.exceptions import DuplicatedError, NotFoundError
+from app.core.exceptions import *
 
 
 class BaseRepository:
